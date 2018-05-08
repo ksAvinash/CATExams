@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/top_navigation"
+        >
+        <item
+            android:id="@+id/nav_quants"
+            android:icon="@drawable/nav_quants"
+            android:title="Quantative Aptitude" />
+
+        <item
+            android:id="@+id/nav_verbal"
+            android:icon="@drawable/nav_verbal"
+            android:title="Verbal Ability" />
+        <item
+            android:id="@+id/nav_data_interpretation"
+            android:icon="@drawable/nav_data_interpretation"
+            android:title="Data Interpretation" />
+        <item
+            android:id="@+id/nav_logical"
+            android:icon="@drawable/nav_logical"
+            android:title="Logical Reasoning" />
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/bottom_navigation"
+        >
+        <item
+            android:id="@+id/nav_bookmarked"
+            android:icon="@drawable/nav_bookmark"
+            android:title="Bookmarked Tricks" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/nav_share"
+            android:title="Share App" />
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/nav_rate"
+            android:title="Rate Us" />
+    </group>
+
+
+
+</menu>
