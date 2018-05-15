@@ -13,6 +13,8 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Context context;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +62,9 @@ public class MainActivity extends AppCompatActivity
 
         rateAppPopUp();
     }
+
+
+
 
 
     @Override
@@ -89,8 +97,22 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        FragmentManager fragmentManager;
+        FragmentTransaction fragmentTransaction;
+        Bundle bundle = new Bundle();
 
         switch (item.getItemId()){
+            case R.id.nav_quants:
+                bundle.putString("content","quants");
+                ContentFragment contentFragment = new ContentFragment();
+                contentFragment.setArguments(bundle);
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.mainactivity_content, contentFragment).addToBackStack(null).commit();
+                break;
+
+
+
             case R.id.nav_share:
                     String str = "https://play.google.com/store/apps/details?id=" + getPackageName();
                     Intent sendIntent = new Intent();
